@@ -126,6 +126,15 @@
 
 11. ### 线程池
 
+    ![http://assets.processon.com/chart_image/5f5799a87d9c08028bdc7dc5.png](http://assets.processon.com/chart_image/5f5799a87d9c08028bdc7dc5.png)
+
+    **自定义线程池拒绝策略**
+
+    1. AbortPolicy（默认）：直接抛出RejectedExecutionException异常阻止系统正常运行。
+    2. CallerRunsPolicy：“调用者运行”一种调节机制，该策略不会抛弃任务，也不会抛出异常，而是将某些任务回退到调用者，从而降低新任务的流量。
+    3. DiscardPolicy：该策略默默地丢弃无法处理的任务，然后把当前对列加入队列中尝试再次提交当前任务。
+    4. DiscardOldesPolicy：抛弃队列中等待最久的任务，然后把当前任务加入队列中，尝试再次提交任务。
+
 12. ### 线程调度
 
 13. ### ForkJoinPool分支/框架 工作窃取
